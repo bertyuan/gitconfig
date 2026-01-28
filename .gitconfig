@@ -1,0 +1,92 @@
+# .gitconfig
+# ==========
+
+[user]
+	name =
+	email = 
+	signingkey = 
+
+[alias]
+  st = status
+  c = commit
+  cs = commit -s
+  a = add .
+  fp = format-patch
+  se = send-email
+  rp= request-pull
+
+[format]
+  signOff = true
+  thread = shallow
+
+#[trailer]
+  #ifexists = addIfDifferent
+
+[branch]
+  sort = -committerdate
+
+[color]
+	ui = auto
+
+[column]
+  ui = auto
+
+[core]
+	excludesfile = /Users/username/.gitignore_global
+  # pager = delta
+  # editor = nvim
+
+[commit]
+  verbose = true
+  gpgsign = true
+
+# [pager]
+# 	diff = delta
+# 	log = delta
+# 	reflog = delta
+# 	show = delta
+
+#  [interactive]
+#  	diffFilter = delta --color-only
+
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  dark = true      # or light = true, or omit for auto-detection
+  line-numbers = true
+  hyperlinks = true
+  side-by-side = false
+
+[diff]
+  algorithm = histogram
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process	
+	required = true
+
+[init]
+  defaultBranch = master
+
+[merge]
+  coflictstyle = zdiff3
+
+[push]
+  autoSetupRemote = true
+  followTags = true
+
+[tag]
+  gpgsign = true
+  sort = version:refname
+
+[help]
+  autocorrect = prompt
+
+[sendemail]
+	smtpEncryption = ssl
+	smtpServer = smtp.example.com
+	smtpUser = user@example.com
+	smtpServerPort = 465
+	confirm = auto
+	annotate = true
+	thread = true
